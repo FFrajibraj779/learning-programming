@@ -13,8 +13,8 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className='header-container'>
-            <Navbar expand="lg"  className='bg-color sm-bg-primary'>
+        <div className=''>
+            <Navbar expand="lg"  className='bg-color bg-primary'>
                 <Container fluid className='' >
                     <Navbar.Brand> <Link to='/' className=' navlink' ><Image style={{ height: '40px', color: 'white', background: '' }} src={logo}></Image> Learning Programming</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
@@ -29,15 +29,15 @@ const Header = () => {
                         <div className='d-lg-flex gap-3'>
                             <Nav.Link> <Link className='menubar sm-text-center' to="/">Home</Link></Nav.Link>
                             <Nav.Link> <Link className='menubar sm-text-center' to="/">Content </Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar sm-text-center' to="/">Register</Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar sm-text-center' to="/">Log In</Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar sm-text-center' to="/register">Register</Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar sm-text-center' to="/lo">Log In</Link></Nav.Link>
                             <Nav.Link> <Link className='menubar  text-center' to="/">FAQ</Link></Nav.Link>
                             <Nav.Link> <Link className='menubar sm-text-center' to="/">Blogs</Link></Nav.Link>
                         </div>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <hr />
+           
         </div>
     );
 };
