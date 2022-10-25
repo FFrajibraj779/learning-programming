@@ -9,7 +9,7 @@ import { FaGoogle } from 'react-icons/fa';
 const Login = () => {
 
 
-    const { createUser, userInfo, setUserInfo } = useContext(AuthContext);
+    const { emailSignIn, userInfo,googleSignIn } = useContext(AuthContext);
     console.log(userInfo.email);
     const [error, setError] = useState({
         email: "",
@@ -21,7 +21,7 @@ const Login = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
-        createUser(userInfo.email, userInfo.password)
+        emailSignIn(userInfo.email, userInfo.password)
             .then(result => {
                 form.reset();
                 const user = result.user;
@@ -35,45 +35,12 @@ const Login = () => {
 
     const handleEmailChange = (event) => {
         const email = event.target.value;
-        console.log(email);
-        const validEmail = /\S+@\S+\.\S+/.test(email);
-
-        if (!validEmail) {
-            setError({ ...error, email: "Please provide valid email" })
-            setUserInfo({ ...userInfo, email: event.target.value })
-        }
-        else {
-            setError({ ...error, email: "" })
-            setUserInfo({ ...userInfo, email: event.target.value })
-        }
-
-
-
+    
     }
 
     const handlePassword = (event) => {
         const password = event.target.value;
-        console.log(password);
-        const UppercasePass = /(?=.*?[A-Z])/.test(password);
-        const Digit = /(?=.*?[0-9])/.test(password);
-
-
-        if (password.length < 6) {
-            setError({ ...error, password: "password at least 6 character" })
-            setUserInfo({ ...userInfo, password: event.target.value })
-        }
-        else if (!UppercasePass) {
-            setError({ ...error, password: "password should be one Uppercase" })
-            setUserInfo({ ...userInfo, password: event.target.value })
-        }
-        else if (!Digit) {
-            setError({ ...error, password: 'password At least one digit' })
-            setUserInfo({ ...userInfo, password: event.target.value })
-        }
-        else {
-            setError({ ...error, password: "" })
-            setUserInfo({ ...userInfo, password: event.target.value })
-        }
+       
     }
 
     return (
@@ -107,7 +74,7 @@ const Login = () => {
                 <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
             <Form.Group className='text-center'>
-                <Button type='submit' className='registerBtn mt-3' variant="light">Register</Button>
+                <Button type='submit' className='registerBtn mt-3' variant="light">Log In</Button>
             </Form.Group>
 
             <p className='text-center'>create a new account <Link to='/register' className='text-white'>register</Link></p>
@@ -121,7 +88,11 @@ const Login = () => {
            
         </Form>
         <div className='text-center googleBtn'>
-         <Button type='submit' size='lg'  variant='light' className='registerBtn'><FaGoogle/> Login With Google</Button>
+         <Button type='submit' size='lg'
+         
+         variant='light'        
+         onClick={googleSignIn}
+         className='registerBtn'><FaGoogle/> Login With Google</Button>
          </div>
 
     </div>
