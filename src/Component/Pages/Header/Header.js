@@ -7,7 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../../img/c-removebg-preview.png'
-import './Header.css'
+import '../Style/style.css'
 import { Link } from 'react-router-dom';
 
 
@@ -27,12 +27,12 @@ const Header = () => {
 
                         </Nav>
                         <div className='d-lg-flex gap-3'>
-                            <Nav.Link> <Link className='menubar sm-text-center' to="/">Home</Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar sm-text-center' to="/">Content </Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar sm-text-center' to="/register">Register</Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar sm-text-center' to="/lo">Log In</Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar  text-center' to="/">FAQ</Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar sm-text-center' to="/">Blogs</Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar sm-text-cente' to="/">Home</Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar sm-text-cente' to="/">Content </Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar sm-text-cente' to="/register">Register</Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar sm-text-cente' to="/lo">Log In</Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar  text-center'to="/">FAQ</Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar sm-text-cente' to="/">Blogs</Link></Nav.Link>
                         </div>
                     </Navbar.Collapse>
                 </Container>
