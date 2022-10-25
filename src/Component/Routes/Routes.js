@@ -1,5 +1,6 @@
 
 import { createBrowserRouter } from "react-router-dom";
+import ContentLayout from "../Layout/ContentLayout";
 import Main from "../Layout/Main";
 import Blogs from "../Pages/Blogs/Blogs";
 import Content from "../Pages/Content/Content";
@@ -39,8 +40,9 @@ const router = createBrowserRouter([
             },
             {
                 path:'/content',
-                element:<Content></Content>
-            }
+                element:<ContentLayout></ContentLayout>
+            },
+             
 
         ]
     }
