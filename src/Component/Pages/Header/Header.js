@@ -11,6 +11,7 @@ import '../Style/style.css'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../UserContext/UserContext';
 import {useContext} from 'react'
+import { FaUser } from 'react-icons/fa';
 
 
 const Header = () => {
@@ -40,7 +41,7 @@ const Header = () => {
                                 userInfo?.uid ? 
                                  <>
                                   <Nav.Link> <Link onClick={handleSignOut} className='menubar ' to="/login">Sign Out</Link></Nav.Link>
-                                
+                                  <Image referrerPolicy='no-referrer' title={userInfo?.displayName} roundedCircle style={{height:'40px'}} src={userInfo?.photoURL ? userInfo?.photoURL : <FaUser/> } ></Image>
                              
                                 </>
                                 :
@@ -49,6 +50,7 @@ const Header = () => {
                                 <Nav.Link> <Link className='menubar ' to="/login">Log In</Link></Nav.Link>
                                 </>
                              }
+                             
                         </div>
                     </Navbar.Collapse>
                 </Container>

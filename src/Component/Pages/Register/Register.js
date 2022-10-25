@@ -8,7 +8,7 @@ import { AuthContext } from '../../UserContext/UserContext';
 
 const Register = () => {
 
-    const { createUser, userInfo, setUserInfo } = useContext(AuthContext);
+    const { createUser, userInfo, setUserInfo,profileUpdate } = useContext(AuthContext);
     const [error, setError] = useState({
         email: "",
         password: "",
@@ -19,11 +19,14 @@ const Register = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
+        const name = form.name.value;
+        const photoURL = form.photoURL.value;
         createUser(userInfo.email, userInfo.password)
             .then(result => {
                 form.reset();
                 const user = result.user;
                 console.log(user);
+                handelprofileUpdate(name, photoURL)
             })
             .catch(err => {
                 setError({ ...error, general: err.message })
@@ -73,6 +76,18 @@ const Register = () => {
             setUserInfo({ ...userInfo, password: event.target.value })
         }
     }
+    const handelprofileUpdate = (name, photoURL) =>{
+        const profile ={
+          displayName:name,
+          photoURL:photoURL,
+        }
+        profileUpdate(profile)
+        .then(()=>{})
+        .catch(err=>{
+            setError({ ...error, general:err.message })
+                console.log(error);
+        })
+    }
 
     return (
         <div>
@@ -84,6 +99,11 @@ const Register = () => {
                     <Form.Group className="mb-3 field" controlId="formBasicName">
                         <Form.Label>Name</Form.Label>
                         <Form.Control name='name' type="text" placeholder="Enter Your Name" required />
+
+                    </Form.Group>
+                    <Form.Group className="mb-3 field" controlId="formBasicPhotURL">
+                        <Form.Label>PhotoURL</Form.Label>
+                        <Form.Control name='photoURL' type="text" placeholder="PhotoURL" required />
 
                     </Form.Group>
                     <Form.Group className="mb-3 field" controlId="formBasicEmail">
@@ -116,8 +136,8 @@ const Register = () => {
                     <p className='text-center'>already have an account please <Link to='/login' className='text-white'>log in</Link></p>
 
                     <Form.Text className="text-danger ">
-                        {error.genarel &&
-                            <p className='text-center'>{error.genarel}</p>
+                        {error?.genarel &&
+                            <p className='text-center'>{error?.genarel}</p>
                         }
                     </Form.Text>
                 </Form>

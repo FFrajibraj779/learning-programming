@@ -3,12 +3,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../UserContext/UserContext';
-import { FaGoogle } from 'react-icons/fa';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 
 const Login = () => {
-    const { emailSignIn, userInfo, googleSignIn, setUserInfo } = useContext(AuthContext);
+    const { emailSignIn, userInfo, googleSignIn, setUserInfo ,githubSignIn} = useContext(AuthContext);
     const navigate = useNavigate();
     const [error, setError] = useState({
         email: "",
@@ -43,8 +43,21 @@ const handleGoogleSignIn  = () =>{
        .then(()=>{
         navigate('/')
        })
+       .catch(err=>{
+        setError({ ...error, general: err.message })
+       })  
 
-
+}
+const handleGithubSignIn = () =>{
+    const GithubProvider = new GithubAuthProvider();
+    githubSignIn(GithubProvider)
+    .then(()=>{
+        navigate('/')
+    })
+    .catch(err=>{
+        setError({ ...error, general: err.message })
+        console.log(err);
+    })
 }
     const handleEmailChange = (event) => {
         const email = event.target.value;
@@ -133,11 +146,16 @@ const handleGoogleSignIn  = () =>{
 
             </Form>
             <div className='text-center googleBtn'>
-                <Button type='submit' size='lg'
+                <Button  type='submit' size='lg'
 
                     variant='light'
                     onClick={handleGoogleSignIn}
-                    className='registerBtn'><FaGoogle /> Login With Google</Button>
+                    className='registerBtn '><FaGoogle /> Login With Google</Button>
+                <Button type='submit' size='lg'
+
+                    variant='light'
+                    onClick={handleGithubSignIn}
+                    className='registerBtn mt-1 '><FaGithub /> Login With Github</Button>
             </div>
 
         </div>
