@@ -9,7 +9,7 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 100vh;
+      height: 90vh;
      
     }
     25% {
@@ -17,7 +17,7 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 100vh;
+      height: 90vh;
       
     }
     50% {
@@ -25,7 +25,7 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 100vh;
+      height: 90vh;
       
     }
     75% {
@@ -33,7 +33,7 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 100vh;
+      height: 90vh;
     
     }
     100% {
@@ -41,7 +41,7 @@
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      height: 100vh;
+      height: 90vh;
       
     }
   }
@@ -67,9 +67,7 @@
     
     
   }
-  .navlink:hover{
-    
-  }
+
   .menubar:hover {
    
     text-decoration: underline;
@@ -102,4 +100,32 @@
   
   transition: 2s;
   
+  }
+
+  .home-title h1{
+    position: absolute;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    top: 18%;
+     left: 5%;
+  }
+
+  .home-title p{
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    color: white;
+    font-size: 20px;
+  }
+
+  @media only screen and (max-width:592px) {
+
+    .home-title p{
+        top: 50%;
+       
+    }
+    
   }

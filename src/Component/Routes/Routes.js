@@ -18,8 +18,8 @@ const router = createBrowserRouter([
         errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
-            path:'/login',
-            element:<Login></Login>
+            path:'/',
+            element:<Home></Home>
             },
             {
                 path:'/blog',
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
                 element:<Faq></Faq>
             },
             {
-                path:'/',
+                path:'/login',
                 element:<Login></Login>
             },
             {
