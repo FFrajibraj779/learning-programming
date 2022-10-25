@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div className=''>
-            <Navbar expand="lg"  className='bg-color bg-primary'>
+            <Navbar expand="lg" className='bg-color bg-primary'>
                 <Container fluid className='' >
                     <Navbar.Brand> <Link to='/' className=' navlink' ><Image style={{ height: '40px', color: 'white', background: '' }} src={logo}></Image> Learning Programming</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
@@ -27,17 +27,18 @@ const Header = () => {
 
                         </Nav>
                         <div className='d-lg-flex gap-3'>
-                            <Nav.Link> <Link className='menubar sm-text-cente' to="/">Home</Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar sm-text-cente' to="/">Content </Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar sm-text-cente' to="/register">Register</Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar sm-text-cente' to="/login">Log In</Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar  text-center'to="/">FAQ</Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar sm-text-cente' to="/">Blogs</Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar ' to="/">Home</Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar ' to="/">Content </Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar ' to="/register">Register</Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar ' to="/login">Log In</Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar ' to="/">FAQ</Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar ' to="/">Blogs</Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar ' to="/">Theme</Link></Nav.Link>
                         </div>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-           
+
         </div>
     );
 };

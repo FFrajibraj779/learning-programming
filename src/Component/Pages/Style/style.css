@@ -49,6 +49,7 @@
   padding: 10px;
   box-shadow: 2px solid beige;
   border-radius: 10px;
+  position: relative;
 }
 .navlink {
   text-decoration: none;
@@ -122,7 +123,6 @@
   word-spacing: 0;
   letter-spacing: 0;
   font-family: sans-serif;
-  color:blue;
   text-transform: capitalize;
   font-size: 20px;
   font-weight: 500;
@@ -215,6 +215,16 @@
     text-transform: uppercase;
     letter-spacing: -1px;
 }
+.footer-section{
+    background-color: blue;
+    padding: 20px;
+}
+.googleBtn{
+   bottom: 30%;
+  left: 20%;
+  width: 50%;
+   position: absolute;
+}
 @media only screen and (max-width: 592px) {
   .home-title p {
     top: 50%;
@@ -251,4 +261,10 @@
 .student{
     line-height: 2px;
 }
+.googleBtn{
+ 
+ 
+ 
+   
+ }
 }

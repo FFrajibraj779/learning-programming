@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../UserContext/UserContext';
 
@@ -113,7 +114,7 @@ const Register = () => {
                         <Button type='submit' className='registerBtn mt-3' variant="light">Register</Button>
                     </Form.Group>
 
-                    <p className='text-center'>already have an account please <Link to='/' className='text-white'>log in</Link></p>
+                    <p className='text-center'>already have an account please <Link to='/login' className='text-white'>log in</Link></p>
 
                     <Form.Text className="text-danger ">
                         {error.genarel &&
@@ -121,6 +122,9 @@ const Register = () => {
                         }
                     </Form.Text>
                 </Form>
+                <div>
+              
+                </div>
 
             </div>
         </div>
