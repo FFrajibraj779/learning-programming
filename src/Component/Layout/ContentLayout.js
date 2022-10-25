@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Outlet } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import Content from '../Pages/Content/Content';
-import Footer from '../Pages/Footer/Footer';
-import Header from '../Pages/Header/Header';
 import LeftsideContainer from '../Pages/LeftsideContainer/LeftsideContainer';
 import RightsideContainer from '../RightsideContainer/RightsideContainer';
 
+export const contentContext = createContext();
+
 const ContentLayout = () => {
+    
+   
     return (
         <div>
              
-             <Container>
+         <contentContext.Provider>
+         <Container>
                 <Row>
                     <Col lg="4">
                      <LeftsideContainer></LeftsideContainer>
@@ -22,6 +25,7 @@ const ContentLayout = () => {
                 </Row>
              </Container>
              <Content></Content>
+         </contentContext.Provider>
             
         </div>
     );

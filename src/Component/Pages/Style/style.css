@@ -225,6 +225,9 @@
   width: 50%;
    position: absolute;
 }
+.leftside-container{
+  height: 100vh;
+}
 @media only screen and (max-width: 592px) {
   .home-title p {
     top: 50%;
