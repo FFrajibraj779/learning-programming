@@ -1,131 +1,254 @@
 .header-container {
-    animation: homeBg 10s ease-in infinite forwards;
-    position: relative;
-    
+  animation: homeBg 10s ease-in infinite forwards;
+  position: relative;
+}
+@keyframes homeBg {
+  0% {
+    background: url(../../img/course-2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
   }
-  @keyframes homeBg {
-    0% {
-      background: url(../../img/course-2.jpg);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 90vh;
-     
-    }
-    25% {
-      background: url(../../img/course.jpg);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 90vh;
-      
-    }
-    50% {
-      background: url(../../img/couse-3.jpg);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 90vh;
-      
-    }
-    75% {
-      background: url(../../img/course-2.jpg);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 90vh;
-    
-    }
-    100% {
-      background: url(../../img/course.jpg);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 90vh;
-      
-    }
+  25% {
+    background: url(../../img/course.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
   }
-  .login-container {
-  position: absolute; 
-   top: 10%;
-   background-color:blue;
-   color: white;
-   left: 20%;
-   width: 50%;
-   
-   padding: 10px;
-   box-shadow: 2px solid beige;
+  50% {
+    background: url(../../img/couse-3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+  }
+  75% {
+    background: url(../../img/course-2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+  }
+  100% {
+    background: url(../../img/course.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+  }
+}
+.login-container {
+  position: absolute;
+  top: 10%;
+  background-color: #00f;
+  color: #fff;
+  left: 20%;
+  width: 50%;
+  padding: 10px;
+  box-shadow: 2px solid beige;
   border-radius: 10px;
-  }
-  .navlink {
-    text-decoration: none;
-    font-size: 25px;
-    font-weight: bolder;
-    letter-spacing: -3px;
-    text-transform: uppercase;
-    color: white;
-    
-    
-  }
-
-  .menubar:hover {
-   
-    text-decoration: underline;
-  }
-  .menubar {
-    color: white;
-    font-size: 22px;
-    font-weight: 700;
-    text-decoration: none;
-    
-  }
-  
-  .title{
-    font-size: 30px;
-  }
-  .field{
-    width: 90%;
-    
-  }
-  
-  .registerBtn{
-    width: 80%;
-    font-size: 20px;
-       border: none;
-       border-radius: 10px;
-       padding: 5px;
-  }
-  .registerBtn:hover{
-    background: rgb(72, 42, 209);
-  
+}
+.navlink {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bolder;
+  letter-spacing: -3px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.menubar:hover {
+  text-decoration: underline;
+}
+.menubar {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.title {
+  font-size: 30px;
+}
+.field {
+  width: 90%;
+}
+.registerBtn {
+  width: 80%;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+}
+.registerBtn:hover {
+  background: #482ad1;
   transition: 2s;
+}
+.home-title h1 {
+  position: absolute;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 50px;
+  text-align: center;
+  top: 18%;
+  left: 5%;
+}
+.home-title p {
+  position: absolute;
+  top: 35%;
+  left: 5%;
+  color: #fff;
+  font-size: 20px;
+}
+.opinion-section {
+  margin: 50px;
+  gap: 20px;
+  margin-bottom: 150px;
+}
+.welcome-section{
+    width: 50%;
+}
+.welcome-section h2 {
+  color: #00f;
+  text-transform: capitalize;
+}
+.welcome-section h3 {
+  font-size: 50px;
+  text-transform: capitalize;
+  font-weight: 900;
+}
+.welcome-section p {
+  word-spacing: 0;
+  letter-spacing: 0;
+  font-family: sans-serif;
+  color:blue;
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 500;
+}
+.total {
+  padding: 10px;
+  border-radius: 10px;
+  color: #00f;
+  text-transform: capitalize;
+  font-size: 25px;
+  font-weight: 700;
+  background-color: #fff;
+  position: absolute;
+  top: 40%;
+  left: 10%;
+ 
+}
+.bg-image {
+  width: 100%;
+ height: 60vh;
+  border-radius: 50px;
+}
+.leftside-img {
+   
+    width: 50%;
+  position: relative;
+  height: 70vh;
+ 
+}
+.front-img{
+  position: absolute;
+  top: 60% ;
+  width: 50%;
+
+  left: 40%;
+  border-radius: 20px;
   
-  }
+  
+}
+.offer-img{
+    width: 100%;
+    height: 50vh;
+    opacity: 50%;
+}
 
-  .home-title h1{
-    position: absolute;
-    color: white;
+.offer-section{
+ position: relative;
+}
+.offer-desc{
+ position: absolute;
+ top: 10%;
+ left: 20%;
+}
+.offer-desc h3{
+ text-transform: uppercase;
+ font-size: 20px;
+ word-spacing: 0px;
+ letter-spacing: -1px;
+ font-weight: bold;
+ margin-bottom: 0;
+ 
+
+}
+.offer-desc h4{
+    line-height: 0;
+    padding-bottom: 10px;
+ font-size: 30px;
+ text-transform: uppercase;
+ font-weight: bolder;
+}
+.student{
+   line-height: -3px;
+    font-weight: 600px;
+    font-size: 30px;
     text-transform: uppercase;
-    font-weight: bold;
-    font-size: 50px;
-    text-align: center;
-    top: 18%;
-     left: 5%;
-  }
-
-  .home-title p{
-    position: absolute;
-    top: 35%;
-    left: 5%;
-    color: white;
-    font-size: 20px;
-  }
-
-  @media only screen and (max-width:592px) {
-
-    .home-title p{
-        top: 50%;
-       
-    }
     
+}
+.offer-desc p{
+
+}
+.offer-btn{
+    margin: 20px 0px;
+    
+}
+.offer-btn Button{
+    padding: 15px 20px;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+@media only screen and (max-width: 592px) {
+  .home-title p {
+    top: 50%;
   }
+  .welcome-section{
+    width: 100%;
+   margin-top: 0;
+   margin-bottom: 20px;
+   
+  }
+  .leftside-img{
+    width: 100%;
+    margin-bottom: -110px;
+
+  }
+  .bg-image{
+    height: 50vh;
+  }
+  .total{
+    padding: 2px;
+    font-size: 15px;
+  }
+  .opinion-section{
+    margin-bottom: 0px;
+  }
+  .offer-desc{
+ 
+    top: 10%;
+    left: 10%;
+   }
+   .offer-desc h4{
+   line-height: 26px;
+}
+.student{
+    line-height: 2px;
+}
+}
