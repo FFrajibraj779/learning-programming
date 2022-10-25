@@ -9,9 +9,13 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from '../../img/c-removebg-preview.png'
 import '../Style/style.css'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../UserContext/UserContext';
+import {useContext} from 'react'
 
 
 const Header = () => {
+    const{userInfo,handleSignOut} = useContext(AuthContext);
+    console.log(userInfo);
     return (
         <div className=''>
             <Navbar expand="lg" className='bg-color bg-primary'>
@@ -28,12 +32,23 @@ const Header = () => {
                         </Nav>
                         <div className='d-lg-flex gap-3'>
                             <Nav.Link> <Link className='menubar ' to="/">Home</Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar ' to="/">Content </Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar ' to="/register">Register</Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar ' to="/login">Log In</Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar ' to="/">FAQ</Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar ' to="/">Content </Link></Nav.Link>                                         
+                           <Nav.Link> <Link className='menubar ' to="/">FAQ</Link></Nav.Link>
                             <Nav.Link> <Link className='menubar ' to="/">Blogs</Link></Nav.Link>
                             <Nav.Link> <Link className='menubar ' to="/">Theme</Link></Nav.Link>
+                            {
+                                userInfo?.uid ? 
+                                 <>
+                                  <Nav.Link> <Link onClick={handleSignOut} className='menubar ' to="/login">Sign Out</Link></Nav.Link>
+                                
+                             
+                                </>
+                                :
+                                <>
+                                 <Nav.Link> <Link className='menubar ' to="/register">Register</Link></Nav.Link>
+                                <Nav.Link> <Link className='menubar ' to="/login">Log In</Link></Nav.Link>
+                                </>
+                             }
                         </div>
                     </Navbar.Collapse>
                 </Container>
