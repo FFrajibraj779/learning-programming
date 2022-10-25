@@ -9,14 +9,15 @@ export const contentContext = createContext();
 
 const ContentLayout = () => {
     
-   
+   const courseData = useLoaderData()
+
     return (
         <div>
              
-         <contentContext.Provider>
+         <contentContext.Provider value={courseData}>
          <Container>
                 <Row>
-                    <Col lg="4">
+                    <Col lg="3">
                      <LeftsideContainer></LeftsideContainer>
                     </Col>
                     <Col>
@@ -24,7 +25,7 @@ const ContentLayout = () => {
                     </Col>
                 </Row>
              </Container>
-             <Content></Content>
+             
          </contentContext.Provider>
             
         </div>

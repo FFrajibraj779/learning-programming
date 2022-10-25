@@ -15,9 +15,9 @@ const LeftsideContainer = () => {
 
     return (
         <div>
-              <h1>category</h1>
+            
               <div>
-            <h4 className='mt-4'>All Category </h4>
+            <h4 className='mt-4'>Course Category </h4>
             <div >
                 {
                     categories.map(category => <p key={category.id}>

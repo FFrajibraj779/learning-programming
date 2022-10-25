@@ -44,6 +44,9 @@ const router = createBrowserRouter([
             },
             {
                 path:'/content',
+                loader:()=>{
+                    return fetch('http://localhost:5000/tutorial')
+                },
                 element:<ContentLayout></ContentLayout>
             },
             {
