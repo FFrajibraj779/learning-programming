@@ -1,20 +1,42 @@
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../UserContext/UserContext';
 
 
 const Register = () => {
-
-    const { createUser, userInfo, setUserInfo,profileUpdate } = useContext(AuthContext);
+    const navigate = useNavigate()
+    const { createUser, userInfo, setUserInfo,profileUpdate, googleSignIn, githubSignIn } = useContext(AuthContext);
     const [error, setError] = useState({
         email: "",
         password: "",
         genarel: "",
     });
-
+    const handleGoogleSignIn  = () =>{
+        const googleProvider = new GoogleAuthProvider();
+        googleSignIn(googleProvider)
+           .then(()=>{
+            navigate('/')
+           })
+           .catch(err=>{
+            setError({ ...error, general: err.message })
+           })  
+    
+    }
+    const handleGithubSignIn = () =>{
+        const GithubProvider = new GithubAuthProvider();
+        githubSignIn(GithubProvider)
+        .then(()=>{
+            navigate('/')
+        })
+        .catch(err=>{
+            setError({ ...error, general: err.message })
+            console.log(err);
+        })
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -141,9 +163,18 @@ const Register = () => {
                         }
                     </Form.Text>
                 </Form>
-                <div>
-              
-                </div>
+                <div className='text-center googleBtn'>
+                <Button  type='submit' size='lg'
+
+                    variant='light'
+                    onClick={handleGoogleSignIn}
+                    className='registerBtn '><FaGoogle /> Login With Google</Button>
+                <Button type='submit' size='lg'
+
+                    variant='light'
+                    onClick={handleGithubSignIn}
+                    className='registerBtn mt-1 '><FaGithub /> Login With Github</Button>
+            </div>
 
             </div>
         </div>

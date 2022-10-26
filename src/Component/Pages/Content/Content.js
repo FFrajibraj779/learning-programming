@@ -24,7 +24,6 @@ const Content = (props) => {
                     </Card.Text>
                     <div className='d-flex justify-content-between'>
                         <Button variant="outline-primary" ><Link to={`/category/${id}`} className='detailsBtn '>details</Link></Button>
-
                         <Link to={`/premium/${id}`} className='detailsBtn'><Button>premium</Button></Link>
                     </div>
                 </Card.Body>

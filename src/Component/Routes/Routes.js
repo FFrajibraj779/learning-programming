@@ -9,8 +9,11 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Faq from "../Pages/FAQ/Faq";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
+import PreInfo from "../Pages/PreInfo/PreInfo";
+import Premium from "../Pages/Premium/Premium";
 import Register from "../Pages/Register/Register";
 import Tutorial from "../Pages/Tutorial/Tutorial";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -61,6 +64,27 @@ const router = createBrowserRouter([
                 loader: ({params})=>{
                     return fetch(`http://localhost:5000/category/${params.id}`)
                 }
+            },
+            {
+                path:'/premium/:id',
+                loader:({params})=>{
+                    return fetch(`http://localhost:5000/category/${params.id}`)
+                },
+                element:<Premium></Premium>
+            },
+            {
+                path:'/tutorial',
+                loader:()=>{
+                    return fetch('http://localhost:5000/tutorial')
+                },
+                element:<PreInfo></PreInfo>
+            },
+            {
+                path:'/tutorial/:id',
+                loader:({params})=>{
+                    return fetch(`http://localhost:5000/tutorial/${params.id}`)
+                },
+                element:<PrivateRoute><PreInfo></PreInfo></PrivateRoute>
             } 
         
 
