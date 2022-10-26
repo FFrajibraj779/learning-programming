@@ -1,11 +1,13 @@
-import { useContext } from "react";
-import { contentContext } from "../Layout/ContentLayout";
+
+import { useLoaderData } from "react-router-dom";
 import Content from "../Pages/Content/Content";
 
 
 
+
 const RightsideContainer = () => {
-const tutorialData = useContext(contentContext);
+const tutorialData = useLoaderData();
+
 
 
     return (

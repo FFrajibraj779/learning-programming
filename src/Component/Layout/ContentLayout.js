@@ -24,6 +24,7 @@ const ContentLayout = () => {
                     <RightsideContainer></RightsideContainer>
                     </Col>
                 </Row>
+                
              </Container>
              
          </contentContext.Provider>

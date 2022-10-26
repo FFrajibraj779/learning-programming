@@ -238,6 +238,9 @@ height: 100vh;
 .tutorial-content{
 
 }
+.detailsBtn{
+  text-decoration: none;
+}
 .tutorial-section{
   display: grid;
   grid-template-columns: repeat(3, 1fr);

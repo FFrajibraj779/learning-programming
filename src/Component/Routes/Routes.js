@@ -8,11 +8,10 @@ import Content from "../Pages/Content/Content";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Faq from "../Pages/FAQ/Faq";
 import Home from "../Pages/Home/Home";
-import LeftsideContainer from "../Pages/LeftsideContainer/LeftsideContainer";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import Tutorial from "../Pages/Tutorial/Tutorial";
-import RightsideContainer from "../RightsideContainer/RightsideContainer";
+
 
 
 
@@ -43,7 +42,14 @@ const router = createBrowserRouter([
                 element:<Register></Register>
             },
             {
-                path:'/content',
+                path:'/tutorial/:id',
+                loader:({params})=>{
+                    return fetch(`http://localhost:5000/tutorial/${params.id}`)
+                },
+                element:<ContentLayout></ContentLayout>
+            },
+            {
+                path:'/tutorial',
                 loader:()=>{
                     return fetch('http://localhost:5000/tutorial')
                 },
@@ -55,14 +61,9 @@ const router = createBrowserRouter([
                 loader: ({params})=>{
                     return fetch(`http://localhost:5000/category/${params.id}`)
                 }
-            } ,
-            {
-                path:'/tutorial/:id',
-                loader:({params})=>{
-                    return fetch(`http://localhost:5000/tutorial/${params.id}`)
-                },
-                element:<Tutorial></Tutorial>
-            }     
+            } 
+        
+
         ]
     }
 ])

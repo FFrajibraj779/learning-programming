@@ -33,7 +33,7 @@ const Header = () => {
                         </Nav>
                         <div className='d-lg-flex gap-3'>
                             <Nav.Link> <Link className='menubar ' to="/">Home</Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar ' to="/content">Content </Link></Nav.Link>                                         
+                            <Nav.Link> <Link className='menubar ' to="/tutorial">Courses </Link></Nav.Link>                                         
                            <Nav.Link> <Link className='menubar ' to="/faq">FAQ</Link></Nav.Link>
                             <Nav.Link> <Link className='menubar ' to="/blog">Blogs</Link></Nav.Link>
                             <Nav.Link> <Link className='menubar ' to="/theme">Theme</Link></Nav.Link>
