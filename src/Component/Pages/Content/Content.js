@@ -3,9 +3,9 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 
-const Content = (probs) => {
+const Content = (props) => {
     
-    const{img, title, price} =probs.singleData;
+    const{img, title, price} =props.singleData;
     
     
 

@@ -6,8 +6,7 @@ import Content from "../Pages/Content/Content";
 
 const RightsideContainer = () => {
 const tutorialData = useContext(contentContext);
-console.log(tutorialData);
-    
+
 
     return (
         <div>

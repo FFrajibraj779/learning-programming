@@ -3,13 +3,13 @@ import { Link, useLoaderData } from 'react-router-dom';
 import CourseDetails from '../Courses/CourseDetails';
 
 const Category = () => {
-    const AllData = useLoaderData();
+    const AllDatas = useLoaderData();
     
    
     return (
         <div>
         {
-            AllData.map(singleData =><CourseDetails key={singleData.id} singleData={singleData}></CourseDetails>)
+            AllDatas.map(singleDatas =><CourseDetails key={singleDatas.id} singleData={singleDatas}></CourseDetails>)
         }
         </div>
     );

@@ -1,13 +1,17 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import CourseDetails from '../Courses/CourseDetails';
 
 const Tutorial = () => {
-    const courseInfo = useLoaderData();
-    console.log(courseInfo);
+    const AllData = useLoaderData();
+    console.log(AllData);
+    
 
     return (
-        <div>
-            <h1>tutorial section </h1>
+        <div className='tutorial-content'>
+           {
+            AllData.map(singleData =><CourseDetails key={singleData.id} singleData={singleData}></CourseDetails>)
+           }
         </div>
     );
 };

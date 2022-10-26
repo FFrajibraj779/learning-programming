@@ -231,10 +231,30 @@
 .singleCart{
   
 }
+.details{
+
+height: 100vh;
+}
+.tutorial-content{
+
+}
 .tutorial-section{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+  
+}
+.pdf{
+  background-color: #00f;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+ 
+}
+.pdf:hover{
+  color: black;
+  
 }
 @media only screen and (max-width: 592px) {
   .home-title p {
@@ -278,4 +298,12 @@
  bottom: 20%;
    
  }
+ .tutorial-section{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+}
+.details{
+  height: 100vh;
+}
 }
