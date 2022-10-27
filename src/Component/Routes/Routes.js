@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/faq',
-                element:<PrivateRoute><Faq></Faq></PrivateRoute>
+                element:<Faq></Faq>
             },
             {
                 path:'/login',

@@ -47,6 +47,7 @@ const Register = () => {
             .then(result => {
                 form.reset();
                 const user = result.user;
+                 navigate('/')
                 console.log(user);
                 handelprofileUpdate(name, photoURL)
             })

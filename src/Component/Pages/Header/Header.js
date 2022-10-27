@@ -12,10 +12,13 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../UserContext/UserContext';
 import {useContext} from 'react'
 import { FaUser } from 'react-icons/fa';
+import ReactSwitch from 'react-switch';
+import { ThemeContext } from '../../../App';
 
 
 const Header = () => {
     const{userInfo,handleSignOut} = useContext(AuthContext);
+    const{theme, toggleTheme} =useContext(ThemeContext);
     console.log(userInfo);
     return (
         <div className=''>
@@ -36,7 +39,7 @@ const Header = () => {
                             <Nav.Link> <Link className='menubar ' to="/tutorial">Courses </Link></Nav.Link>                                         
                            <Nav.Link> <Link className='menubar ' to="/faq">FAQ</Link></Nav.Link>
                             <Nav.Link> <Link className='menubar ' to="/blog">Blogs</Link></Nav.Link>
-                            <Nav.Link> <Link className='menubar ' to="/theme">Theme</Link></Nav.Link>
+                            <Nav.Link> <Link className='menubar ' to="/theme"><ReactSwitch onChange={toggleTheme} checked={theme === "dark"}/></Link></Nav.Link>
                             {
                                 userInfo?.uid ? 
                                  <>

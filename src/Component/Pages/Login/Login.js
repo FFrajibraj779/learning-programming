@@ -5,10 +5,12 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../UserContext/UserContext';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
-    const { emailSignIn, userInfo, googleSignIn, setUserInfo ,githubSignIn} = useContext(AuthContext);
+    const { emailSignIn, userInfo, googleSignIn, setUserInfo ,githubSignIn,resetPassword} = useContext(AuthContext);
     const navigate = useNavigate();
     const [error, setError] = useState({
         email: "",
@@ -16,18 +18,34 @@ const Login = () => {
         genarel: "",
     });
     const location = useLocation();
-    const from = location.state?.from?.pathname || '/'
+    const from = location.state?.from?.pathname || '/';
+
+    const handleReset = (email) =>{
+        resetPassword(email)
+        .then((result)=>{
+            const user= result.user;
+            console.log(user);
+             alert('reset password')
+        })
+        .catch(err =>{
+            setError({ ...error, general: err.message })
+            console.log(error);
+        })
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value; 
+      
         emailSignIn(email, password)
             .then(result => {
 
                 navigate(from, { replace: true })
-               
+                toast.success('log in successfully!', {
+                    position: toast.POSITION.TOP_RIGHT
+                });
                 const user = result.user;
                 form.reset();
                 console.log(user);
@@ -41,7 +59,11 @@ const handleGoogleSignIn  = () =>{
     const googleProvider = new GoogleAuthProvider();
     googleSignIn(googleProvider)
        .then(()=>{
+     
         navigate(from, { replace: true })
+        toast.success('log in successfully!', {
+            position: toast.POSITION.TOP_RIGHT
+        });
        })
        .catch(err=>{
         setError({ ...error, general: err.message })
@@ -52,6 +74,8 @@ const handleGithubSignIn = () =>{
     const GithubProvider = new GithubAuthProvider();
     githubSignIn(GithubProvider)
     .then(()=>{
+       
+        
         navigate(from, { replace: true })
     })
     .catch(err=>{
@@ -128,8 +152,10 @@ const handleGithubSignIn = () =>{
                         }
                     </Form.Text>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Group className="mb-3 reset" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
+                  <button className='resetBtn' onClick={handleReset}>Reset password</button>
+                    
                 </Form.Group>
                 <Form.Group className='text-center'>
                     <Button type='submit' className='registerBtn mt-3' variant="light">Log In</Button>

@@ -1,10 +1,18 @@
 .App {
-  text-align: center;
+
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+#light {
+  background-color: white;
+}
+
+#dark {
+  background-color: black;
+  color: white;
 }
 
 @media (prefers-reduced-motion: no-preference) {

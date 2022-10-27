@@ -5,12 +5,14 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UserContext from './Component/UserContext/UserContext';
+import { ToastContainer } from 'react-bootstrap';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
    <UserContext>
    <App />
+   <ToastContainer></ToastContainer>
    </UserContext>
   </React.StrictMode>
 );
