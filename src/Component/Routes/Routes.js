@@ -11,6 +11,7 @@ import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import PreInfo from "../Pages/PreInfo/PreInfo";
 import Premium from "../Pages/Premium/Premium";
+import Profile from "../Pages/Profile/Profile";
 import Register from "../Pages/Register/Register";
 import Tutorial from "../Pages/Tutorial/Tutorial";
 import PrivateRoute from "./PrivateRoute";
@@ -85,6 +86,10 @@ const router = createBrowserRouter([
                     return fetch(`http://localhost:5000/tutorial/${params.id}`)
                 },
                 element:<PreInfo></PreInfo>
+            },
+            {
+                path:'/profile',
+                element:<Profile></Profile>
             } 
         
 

@@ -22,7 +22,7 @@ const Header = () => {
     console.log(userInfo);
     return (
         <div className=''>
-            <Navbar expand="lg" className='bg-color bg-primary'>
+            <Navbar expand="lg" className='bg-color bg-primary '>
                 <Container fluid className='' >
                     <Navbar.Brand> <Link to='/' className=' navlink' ><Image style={{ height: '40px', color: 'white', background: '' }} src={logo}></Image> Learning Programming</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
@@ -35,7 +35,7 @@ const Header = () => {
 
                         </Nav>
                         <div className='d-lg-flex gap-3'>
-                            <Nav.Link> <Link className='menubar ' to="/">Home</Link></Nav.Link>
+                            <Nav.Link > <Link className='menubar '  to="/">Home</Link></Nav.Link>
                             <Nav.Link> <Link className='menubar ' to="/tutorial">Courses </Link></Nav.Link>                                         
                            <Nav.Link> <Link className='menubar ' to="/faq">FAQ</Link></Nav.Link>
                             <Nav.Link> <Link className='menubar ' to="/blog">Blogs</Link></Nav.Link>
@@ -44,7 +44,11 @@ const Header = () => {
                                 userInfo?.uid ? 
                                  <>
                                   <Nav.Link> <Link onClick={handleSignOut} className='menubar ' to="/login">Sign Out</Link></Nav.Link>
-                                  <Image referrerPolicy='no-referrer' title={userInfo?.displayName} roundedCircle style={{height:'40px'}} src={userInfo?.photoURL ? userInfo?.photoURL : <FaUser/> } ></Image>
+                                <Nav.Link>
+                                <Link to='/profile'>
+                                 <Image referrerPolicy='no-referrer' title={userInfo?.displayName} roundedCircle style={{height:'40px'}} src={userInfo?.photoURL ? userInfo?.photoURL : <FaUser/> } ></Image>
+                                 </Link>
+                                </Nav.Link>
                              
                                 </>
                                 :

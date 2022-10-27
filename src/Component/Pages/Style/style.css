@@ -308,6 +308,14 @@ justify-content: space-around;
   text-decoration: underline;
   
 }
+.profile-container{
+  
+  height: 100vh;
+}
+.singleCard{
+  margin: 20% auto;
+
+}
 @media only screen and (max-width: 592px) {
   .home-title p {
     top: 50%;
