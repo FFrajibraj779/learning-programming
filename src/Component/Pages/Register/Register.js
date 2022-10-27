@@ -163,7 +163,7 @@ const Register = () => {
                         }
                     </Form.Text>
                 </Form>
-                <div className='text-center googleBtn'>
+                <div className='text-center googleRegister'>
                 <Button  type='submit' size='lg'
 
                     variant='light'

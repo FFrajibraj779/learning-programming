@@ -19,6 +19,7 @@ const UserContext = ({ children }) => {
 
 
     const createUser = (email, password) => {
+        setLoader(true)
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
@@ -31,6 +32,7 @@ const UserContext = ({ children }) => {
         return signInWithPopup(auth, provider )
     }
     const githubSignIn = (provider) =>{
+        setLoader(true)
         return signInWithPopup(auth, provider)
     }
     const handleSignOut = () => {
@@ -38,10 +40,11 @@ const UserContext = ({ children }) => {
         return signOut(auth);
     }
     const profileUpdate = (profile) =>{
+
         return updateProfile(auth.currentUser, profile);
     }
     useEffect(() => {
-        const unSubScribe = onAuthStateChanged(auth, (currentUser) => {
+        const unSubScribe = onAuthStateChanged(auth, currentUser => {
             setUserInfo(currentUser);
             setLoader(false)
         })

@@ -15,8 +15,8 @@ const Login = () => {
         password: "",
         genarel: "",
     });
-    // const location = useLocation();
-    // const from = location.state?.from?.pathname || '/'
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -26,8 +26,8 @@ const Login = () => {
         emailSignIn(email, password)
             .then(result => {
 
-                // navigate(from, { replace: true })
-                navigate('/')
+                navigate(from, { replace: true })
+               
                 const user = result.user;
                 form.reset();
                 console.log(user);
@@ -41,7 +41,7 @@ const handleGoogleSignIn  = () =>{
     const googleProvider = new GoogleAuthProvider();
     googleSignIn(googleProvider)
        .then(()=>{
-        navigate('/')
+        navigate(from, { replace: true })
        })
        .catch(err=>{
         setError({ ...error, general: err.message })
@@ -52,7 +52,7 @@ const handleGithubSignIn = () =>{
     const GithubProvider = new GithubAuthProvider();
     githubSignIn(GithubProvider)
     .then(()=>{
-        navigate('/')
+        navigate(from, { replace: true })
     })
     .catch(err=>{
         setError({ ...error, general: err.message })

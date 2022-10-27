@@ -34,7 +34,7 @@ const router = createBrowserRouter([
             },
             {
                 path:'/faq',
-                element:<Faq></Faq>
+                element:<PrivateRoute><Faq></Faq></PrivateRoute>
             },
             {
                 path:'/login',
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
                 loader:({params})=>{
                     return fetch(`http://localhost:5000/category/${params.id}`)
                 },
-                element:<Premium></Premium>
+                element:<PrivateRoute><Premium></Premium></PrivateRoute>
             },
             {
                 path:'/tutorial',
@@ -84,7 +84,7 @@ const router = createBrowserRouter([
                 loader:({params})=>{
                     return fetch(`http://localhost:5000/tutorial/${params.id}`)
                 },
-                element:<PrivateRoute><PreInfo></PreInfo></PrivateRoute>
+                element:<PreInfo></PreInfo>
             } 
         
 

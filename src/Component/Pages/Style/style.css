@@ -225,6 +225,12 @@
   width: 50%;
    position: absolute;
 }
+.googleRegister{
+  bottom: 5%;
+  left: 20%;
+  width: 50%;
+  position: absolute;
+}
 .leftside-container{
   height: 100vh;
 }
@@ -333,5 +339,12 @@ height: 100vh;
 }
 .details{
   height: 100vh;
+}
+.registerBtn{
+  font-size: 12px;
+  padding: 0;
+}
+.googleRegister{
+  bottom: 0;
 }
 }
