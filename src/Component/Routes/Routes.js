@@ -21,80 +21,80 @@ import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
-        path:'/',
-        element:<Main></Main>,
-        errorElement:<ErrorPage></ErrorPage>,
-        children:[
+        path: '/',
+        element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
+        children: [
             {
-            path:'/',
-            element:<Home></Home>
+                path: '/',
+                element: <Home></Home>
             },
             {
-                path:'/blog',
-                element:<Blogs></Blogs>
+                path: '/blog',
+                element: <Blogs></Blogs>
             },
             {
-                path:'/faq',
-                element:<Faq></Faq>
+                path: '/faq',
+                element: <Faq></Faq>
             },
             {
-                path:'/login',
-                element:<Login></Login>
+                path: '/login',
+                element: <Login></Login>
             },
             {
-                path:'/register',
-                element:<Register></Register>
+                path: '/register',
+                element: <Register></Register>
             },
             {
-                path:'/tutorial/:id',
-                loader:({params})=>{
-                    return fetch(`http://localhost:5000/tutorial/${params.id}`)
+                path: '/tutorial/:id',
+                loader: ({ params }) => {
+                    return fetch(`https://assignment-10-server-opal.vercel.app/tutorial/${params.id}`)
                 },
-                element:<ContentLayout></ContentLayout>
+                element: <ContentLayout></ContentLayout>
             },
             {
-                path:'/tutorial',
-                loader:()=>{
-                    return fetch('http://localhost:5000/tutorial')
+                path: '/tutorial',
+                loader: () => {
+                    return fetch('https://assignment-10-server-opal.vercel.app/tutorial')
                 },
-                element:<ContentLayout></ContentLayout>
+                element: <ContentLayout></ContentLayout>
             },
             {
-                path:'/category/:id',
-                element:<Category></Category>,
-                loader: ({params})=>{
-                    return fetch(`http://localhost:5000/category/${params.id}`)
+                path: '/category/:id',
+                element: <Category></Category>,
+                loader: ({ params }) => {
+                    return fetch(`https://assignment-10-server-opal.vercel.app/category/${params.id}`)
                 }
             },
             {
-                path:'/premium/:id',
-                loader:({params})=>{
-                    return fetch(`http://localhost:5000/category/${params.id}`)
+                path: '/premium/:id',
+                loader: ({ params }) => {
+                    return fetch(`https://assignment-10-server-opal.vercel.app/category/${params.id}`)
                 },
-                element:<PrivateRoute><Premium></Premium></PrivateRoute>
+                element: <PrivateRoute><Premium></Premium></PrivateRoute>
             },
             {
-                path:'/tutorial',
-                loader:()=>{
-                    return fetch('http://localhost:5000/tutorial')
+                path: '/tutorial',
+                loader: () => {
+                    return fetch('https://assignment-10-server-opal.vercel.app/tutorial')
                 },
-                element:<PreInfo></PreInfo>
+                element: <PreInfo></PreInfo>
             },
             {
-                path:'/tutorial/:id',
-                loader:({params})=>{
-                    return fetch(`http://localhost:5000/tutorial/${params.id}`)
+                path: '/tutorial/:id',
+                loader: ({ params }) => {
+                    return fetch(`https://assignment-10-server-opal.vercel.app/tutorial/${params.id}`)
                 },
-                element:<PreInfo></PreInfo>
+                element: <PreInfo></PreInfo>
             },
             {
-                path:'/profile',
-                element:<Profile></Profile>
-            } 
-        
+                path: '/profile',
+                element: <Profile></Profile>
+            }
+
 
         ]
     }
 ])
 
-export default router ;
+export default router;

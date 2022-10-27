@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
 const LeftsideContainer = () => {
-    
+
     const [categories, setCategories] = useState([]);
-  
+
     useEffect(() => {
         fetch('http://localhost:5000/category')
             .then(res => res.json())
@@ -15,20 +15,23 @@ const LeftsideContainer = () => {
 
     return (
         <div>
-            
-              <div>
-            <h4 className='mt-4'>Course Category </h4>
-            <div >
-                {
-                    categories.map(category => <p key={category.id}>
-                     <Link to={`/category/${category.id}`}>{category.name}</Link>
-              
-                    </p>)
-                }
+
+            <div>
+                <h4 className='mt-4'>Course Category </h4>
+                <hr className='hr' />
+                <div >
+                    {
+                        categories.map(category => <p key={category.id}>
+                            <Link className='category-link' to={`/category/${category.id}`}>
+                                <h6 className='category-name' >{category.name}</h6>
+                            </Link>
+
+                        </p>)
+                    }
+                </div>
+
             </div>
 
-        </div>
-       
         </div>
     );
 };

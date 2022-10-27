@@ -9,16 +9,16 @@ const auth = getAuth(app);
 export const AuthContext = createContext();
 
 const UserContext = ({ children }) => {
-    const[loader, setLoader] = useState(true);
- 
+    const [loader, setLoader] = useState(true);
+
     const [userInfo, setUserInfo] = useState({
         email: "",
         password: ""
     });
 
-   const resetPassword = (email) =>{
-    return sendPasswordResetEmail(auth, email)
-   }
+    const resetPassword = (email) => {
+        return sendPasswordResetEmail(auth, email)
+    }
 
     const createUser = (email, password) => {
         setLoader(true)
@@ -31,9 +31,9 @@ const UserContext = ({ children }) => {
     }
     const googleSignIn = (provider) => {
         setLoader(true)
-        return signInWithPopup(auth, provider )
+        return signInWithPopup(auth, provider)
     }
-    const githubSignIn = (provider) =>{
+    const githubSignIn = (provider) => {
         setLoader(true)
         return signInWithPopup(auth, provider)
     }
@@ -41,7 +41,7 @@ const UserContext = ({ children }) => {
         setLoader(true)
         return signOut(auth);
     }
-    const profileUpdate = (profile) =>{
+    const profileUpdate = (profile) => {
 
         return updateProfile(auth.currentUser, profile);
     }
@@ -54,7 +54,7 @@ const UserContext = ({ children }) => {
             unSubScribe();
         }
     }, [])
-    const authInfo = { userInfo, resetPassword, googleSignIn, handleSignOut, createUser, setUserInfo, emailSignIn, loader,githubSignIn,profileUpdate }
+    const authInfo = { userInfo, resetPassword, googleSignIn, handleSignOut, createUser, setUserInfo, emailSignIn, loader, githubSignIn, profileUpdate }
 
     return (
         <AuthContext.Provider value={authInfo}>

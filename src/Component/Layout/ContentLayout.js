@@ -8,27 +8,27 @@ import RightsideContainer from '../RightsideContainer/RightsideContainer';
 export const contentContext = createContext();
 
 const ContentLayout = () => {
-    
-   const courseData = useLoaderData()
+
+    const courseData = useLoaderData()
 
     return (
         <div>
-             
-         <contentContext.Provider value={courseData}>
-         <Container>
-                <Row>
-                    <Col lg="3">
-                     <LeftsideContainer></LeftsideContainer>
-                    </Col>
-                    <Col>
-                    <RightsideContainer></RightsideContainer>
-                    </Col>
-                </Row>
-                
-             </Container>
-             
-         </contentContext.Provider>
-            
+
+            <contentContext.Provider value={courseData}>
+                <Container>
+                    <Row>
+                        <Col lg="3">
+                            <LeftsideContainer></LeftsideContainer>
+                        </Col>
+                        <Col>
+                            <RightsideContainer></RightsideContainer>
+                        </Col>
+                    </Row>
+
+                </Container>
+
+            </contentContext.Provider>
+
         </div>
     );
 };

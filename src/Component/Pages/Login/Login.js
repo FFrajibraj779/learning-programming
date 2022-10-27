@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
-    const { emailSignIn, userInfo, googleSignIn, setUserInfo ,githubSignIn,resetPassword} = useContext(AuthContext);
+    const { emailSignIn, userInfo, googleSignIn, setUserInfo, githubSignIn, resetPassword } = useContext(AuthContext);
     const navigate = useNavigate();
     const [error, setError] = useState({
         email: "",
@@ -20,25 +20,25 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
-    const handleReset = (email) =>{
+    const handleReset = (email) => {
         resetPassword(email)
-        .then((result)=>{
-            const user= result.user;
-            console.log(user);
-             alert('reset password')
-        })
-        .catch(err =>{
-            setError({ ...error, general: err.message })
-            console.log(error);
-        })
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+                alert('reset password')
+            })
+            .catch(err => {
+                setError({ ...error, general: err.message })
+                console.log(error);
+            })
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
-        const password = form.password.value; 
-      
+        const password = form.password.value;
+
         emailSignIn(email, password)
             .then(result => {
 
@@ -55,34 +55,34 @@ const Login = () => {
                 console.log(error);
             })
     }
-const handleGoogleSignIn  = () =>{
-    const googleProvider = new GoogleAuthProvider();
-    googleSignIn(googleProvider)
-       .then(()=>{
-     
-        navigate(from, { replace: true })
-        toast.success('log in successfully!', {
-            position: toast.POSITION.TOP_RIGHT
-        });
-       })
-       .catch(err=>{
-        setError({ ...error, general: err.message })
-       })  
+    const handleGoogleSignIn = () => {
+        const googleProvider = new GoogleAuthProvider();
+        googleSignIn(googleProvider)
+            .then(() => {
 
-}
-const handleGithubSignIn = () =>{
-    const GithubProvider = new GithubAuthProvider();
-    githubSignIn(GithubProvider)
-    .then(()=>{
-       
-        
-        navigate(from, { replace: true })
-    })
-    .catch(err=>{
-        setError({ ...error, general: err.message })
-        console.log(err);
-    })
-}
+                navigate(from, { replace: true })
+                toast.success('log in successfully!', {
+                    position: toast.POSITION.TOP_RIGHT
+                });
+            })
+            .catch(err => {
+                setError({ ...error, general: err.message })
+            })
+
+    }
+    const handleGithubSignIn = () => {
+        const GithubProvider = new GithubAuthProvider();
+        githubSignIn(GithubProvider)
+            .then(() => {
+
+
+                navigate(from, { replace: true })
+            })
+            .catch(err => {
+                setError({ ...error, general: err.message })
+                console.log(err);
+            })
+    }
     const handleEmailChange = (event) => {
         const email = event.target.value;
         console.log(email);
@@ -154,8 +154,8 @@ const handleGithubSignIn = () =>{
                 </Form.Group>
                 <Form.Group className="mb-3 reset" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
-                  <button className='resetBtn' onClick={handleReset}>Reset password</button>
-                    
+                    <button className='resetBtn' onClick={handleReset}>Reset password</button>
+
                 </Form.Group>
                 <Form.Group className='text-center'>
                     <Button type='submit' className='registerBtn mt-3' variant="light">Log In</Button>
@@ -172,7 +172,7 @@ const handleGithubSignIn = () =>{
 
             </Form>
             <div className='text-center googleBtn'>
-                <Button  type='submit' size='lg'
+                <Button type='submit' size='lg'
 
                     variant='light'
                     onClick={handleGoogleSignIn}
