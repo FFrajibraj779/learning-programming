@@ -8,7 +8,7 @@ const LeftsideContainer = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch('https://assignment-10-server-opal.vercel.app/tutorial')
+        fetch('https://assignment-10-server-opal.vercel.app/category')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
