@@ -2,7 +2,7 @@
  <p>project link (https://assignment10-c02d5.web.app/)</P>
  
  ##### servar side Link
- <p>https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-FFrajibraj779</p>
+ <p>https://github.com/FFrajibraj779/learning-programming-server</p>
  
  #### description
  * best quality learning
