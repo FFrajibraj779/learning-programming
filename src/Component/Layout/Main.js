@@ -12,7 +12,7 @@ const Main = () => {
 
         <div>
             <Header></Header>
-           <div className='min-height'>
+           <div className=''>
            <Outlet></Outlet>
            </div>
             <Footer></Footer>

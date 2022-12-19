@@ -2,10 +2,11 @@ import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
 
 const Faq = () => {
+
     return (
         <div>
 
-            <div className='accordian m-5'>
+            <div className=' m-5'>
                 <h4 className='text-capitalize'>Frequently asked question  </h4>
                 <Accordion defaultActiveKey={['0']} alwaysOpen>
                     <Accordion.Item eventKey="0">
