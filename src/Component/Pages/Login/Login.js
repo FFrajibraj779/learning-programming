@@ -126,10 +126,10 @@ const Login = () => {
         }
     }
     return (
-        <div className='header-container '>
+        <div className='header-containers  height'>
 
 
-            <Form onSubmit={handleSubmit} className='login-container ' >
+            <Form onSubmit={handleSubmit} className='login-containers ' >
                 <h1 className='text-center title'>Please Log In</h1>
 
                 <Form.Group className="mb-3 field" controlId="formBasicEmail">
@@ -146,7 +146,7 @@ const Login = () => {
                 <Form.Group className="mb-3 field" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control name='password' type="password" placeholder="Password" onChange={handlePassword} required />
-                    <Form.Text className="text-white  ">
+                    <Form.Text className="text-danger  ">
                         {error.password &&
                             <p className='text-center'>{error.password}</p>
                         }
@@ -161,9 +161,9 @@ const Login = () => {
                     <Button type='submit' className='registerBtn mt-3' variant="light">Log In</Button>
                 </Form.Group>
 
-                <p className='text-center'>create a new account <Link to='/register' className='text-white'>register</Link></p>
+                <p className='text-center'>create a new account <Link to='/register' className=''>register</Link></p>
 
-                <Form.Text className="text-danger ">
+                <Form.Text className="text-danger">
                     {error.genarel &&
                         <p className='text-center'>{error.genarel}</p>
                     }
@@ -171,17 +171,17 @@ const Login = () => {
 
 
             </Form>
-            <div className='text-center googleBtn'>
+            <div className='text-center '>
                 <Button type='submit' size='lg'
 
                     variant='light'
                     onClick={handleGoogleSignIn}
-                    className='registerBtn '><FaGoogle /> Login With Google</Button>
+                    className=' '><FaGoogle /> Login With Google</Button>
                 <Button type='submit' size='lg'
 
                     variant='light'
                     onClick={handleGithubSignIn}
-                    className='registerBtn mt-1 '><FaGithub /> Login With Github</Button>
+                    className=' mt-1 '><FaGithub /> Login With Github</Button>
             </div>
 
         </div>

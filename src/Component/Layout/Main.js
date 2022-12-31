@@ -12,9 +12,7 @@ const Main = () => {
 
         <div>
             <Header></Header>
-            <div className='' >
             <Outlet></Outlet>
-            </div>
             <Footer></Footer>
         </div>
 
