@@ -4,6 +4,7 @@ import ContentLayout from "../Layout/ContentLayout";
 import Main from "../Layout/Main";
 import Blogs from "../Pages/Blogs/Blogs";
 import Category from "../Pages/Category/Category";
+import CheckOut from "../Pages/CheckOut/CheckOut";
 import Content from "../Pages/Content/Content";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Faq from "../Pages/FAQ/Faq";
@@ -90,6 +91,13 @@ const router = createBrowserRouter([
             {
                 path: '/profile',
                 element: <Profile></Profile>
+            },
+            {
+                path:"checkout/:id",
+                element:<CheckOut/>,
+                loader: ({ params }) => {
+                    return fetch(`https://assignment-10-server-opal.vercel.app/tutorial/${params.id}`)
+                },
             }
 
 

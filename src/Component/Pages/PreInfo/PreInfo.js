@@ -2,11 +2,13 @@ import React from 'react';
 import { Button, Image } from 'react-bootstrap';
 import { AuthContext } from '../../UserContext/UserContext';
 import {useContext} from 'react'
+import { Link } from 'react-router-dom';
 
 
-const PreInfo = (props) => {
+const PreInfo = ({singleData}) => {
   const{userInfo} = useContext(AuthContext)
-    const{title, img} = props.singleData;
+    const{title, img, id, tutorial_id} = singleData;
+    console.log(singleData);
     return (
        
            
@@ -30,7 +32,7 @@ const PreInfo = (props) => {
            </div>
         </div>
         <div>
-            <button className='checkBtn'>Check Out</button>
+          <Link to={`/checkout/${tutorial_id}`}>   <button className='checkBtn'>Check Out</button></Link>
         </div>
       </div>
  
